@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:pothole_detection_system/login.dart';
+import 'map.dart';
+import 'home.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:geocoding/geocoding.dart';
 
-void main() {
+const google_map_API = "AIzaSyAGWXvAmeJ7hsj9qxqVGnq9nqkge_ENu_8";
+String? destination;
+Position? destinationPosition;
+int potholesReportedByUser = 0;
+final geo = GeocodingPlatform.instance;
+final destinationController = TextEditingController();
+List<LatLng> polylineCoordinates = [];
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -12,34 +28,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Pothole Detection System',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MapScreen(),
+      home: LoginPage(),
     );
   }
-}
-
-class MapScreen extends StatefulWidget{
-  @override
-  _MapScreenState createState() => _MapScreenState();
-}
-
-class _MapScreenState extends State<MapScreen>{
-  static const _initialCameraPosition = CameraPosition(
-    target: LatLng(37.773972, -122.431297)
-  );
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: GoogleMap(
-        myLocationButtonEnabled: false,
-        zoomControlsEnabled: false,
-        initialCameraPosition: _initialCameraPosition
-      )
-    );
-  }
-  
 }

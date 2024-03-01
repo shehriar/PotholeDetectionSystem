@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "685831508537",
+    "firebase_url": "https://cs440-group16-pds-a3f22-default-rtdb.firebaseio.com",
+    "project_id": "cs440-group16-pds-a3f22",
+    "storage_bucket": "cs440-group16-pds-a3f22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685831508537:android:b37a72b3e16e0a415533e8",
+        "android_client_info": {
+          "package_name": "com.example.pothole_detection_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK2HHwUH1HSumGy2vKZBY-yZsAnyiLTMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

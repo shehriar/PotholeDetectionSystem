@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:label="pothole_detection_system"
         android:name="${applicationName}"
@@ -31,6 +32,6 @@
             android:value="2" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAsqo8wW3WoXVsBDHDGpeH1bz13Q7bJaso"/>
+            android:value="AIzaSyAGWXvAmeJ7hsj9qxqVGnq9nqkge_ENu_8"/>
     </application>
 </manifest>
